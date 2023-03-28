@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:record/record.dart';
 
 class RecordingPage extends StatefulWidget {
   const RecordingPage({Key? key}) : super(key: key);
@@ -50,8 +51,8 @@ class _RecordingPageState extends State<RecordingPage> {
       _lastWords = result.recognizedWords;
       text = result.recognizedWords;
       print(text);
-      if(text=="okay") {
-        Navigator.pushNamed(context, '/sos');
+      if(text=="help") {
+        Navigator.pushNamed(context, '/voicerecord');
       }
     });
   }
