@@ -5,6 +5,7 @@ import 'package:besafe/screens/utils/colors_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../reusable_widgets/reusable_widgets.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   @override
+  bool loading = false;
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -48,18 +50,26 @@ class _SignInScreenState extends State<SignInScreen> {
                   const SizedBox(
                     height: 5,
                   ),
+                  if(loading==true) ... [
+                    SpinKitRotatingCircle(
+                      color: Colors.white,
+                      size: 50.0,
+                    )],
                   forgotPassword(context),
                   firebaseButton(context, "Sign In", () {
+                    loading = true;
                     FirebaseAuth.instance.signInWithEmailAndPassword(
                         email: _emailTextController.text,
                         password: _passwordTextController.text)
                         .then((value) {
+                      loading = false;
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => HomeScreen()));
                     }).onError((error, stackTrace) {
                       print("Wrong Password ${error.toString()}");
                     });
                   }),
+
                   signUpOption()
                 ],
               ),

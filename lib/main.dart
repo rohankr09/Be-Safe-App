@@ -1,4 +1,6 @@
+import 'package:besafe/screens/recording.dart';
 import 'package:besafe/screens/signin_screen.dart';
+import 'package:besafe/screens/sos.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +32,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const SignInScreen(),
+      routes: {
+        "/record": (context) => RecordingPage(),
+        '/sos': (context)=> SOS_Screen()
+      },
     );
   }
 }
