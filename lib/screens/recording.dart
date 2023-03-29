@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+
 
 class RecordingPage extends StatefulWidget {
   const RecordingPage({Key? key}) : super(key: key);
@@ -25,6 +27,7 @@ class _RecordingPageState extends State<RecordingPage> {
   /// This has to happen only once per app
   void _initSpeech() async {
     _speechEnabled = await _speechToText.initialize();
+    _startListening();
     setState(() {});
   }
 
@@ -50,8 +53,11 @@ class _RecordingPageState extends State<RecordingPage> {
       _lastWords = result.recognizedWords;
       text = result.recognizedWords;
       print(text);
-      if(text=="okay") {
+      if(text=="help"  || text=="Help me please" || text=="help me please" || text=="HELP ME PLEASE" || text=="Help me please" || text=="help me please" || text=="HELP ME PLEASE I AM IN DANGER" || text=="Help me please I am in danger" || text=="help me please I am in danger" || text=="HELP ME PLEASE I AM IN DANGER" || text=="Help me please I am in danger" || text=="help me please I am in danger" )
+       {
+        FlutterRingtonePlayer.play(fromAsset:"assets/images/Police-Siren.mp3");
         Navigator.pushNamed(context, '/sos');
+         
       }
     });
   }

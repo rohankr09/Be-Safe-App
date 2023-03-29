@@ -1,6 +1,17 @@
+import 'dart:async';
+
 import 'package:besafe/screens/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+
+
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
+import 'package:flutter/material.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -43,7 +54,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.red)
                 ),
-                  onPressed: () {},
+                  onPressed: () {
+
+                    Timer(Duration( seconds: 4), () {
+                         FlutterRingtonePlayer.play(fromAsset:"assets/images/Police-Siren.mp3");
+                     });
+                      
+
+                  },
                   icon: Icon(Icons.add_alert,
                   color: Colors.white,
                   ),
@@ -52,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       color: Colors.white
                     ),
+                    
                   )
               ),
             ),
@@ -60,7 +79,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(Colors.blue)
                   ),
-                  onPressed: () {},
+                  onPressed: 
+
+                    
+                    ()async{
+                      Uri phoneno = Uri.parse('tel:+91100');
+                      if (await launchUrl(phoneno)) {
+                          //dialer opened
+                      }else{
+                          //dailer is not opened
+                      }
+                    
+
+
+                    // Navigator.pushNamed(context, "/emergency");
+                  },
                   icon: Icon(Icons.call,
                     color: Colors.white,
                   ),
@@ -77,7 +110,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(Colors.blue)
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/map");
+                  
+                  },
                   icon: Icon(Icons.location_on,
                     color: Colors.white,
                   ),
