@@ -51,7 +51,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 5,
                   ),
                   if(loading==true) ... [
-                    SpinKitRotatingCircle(
+                    SpinKitRing(
                       color: Colors.white,
                       size: 50.0,
                     )],

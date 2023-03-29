@@ -3,6 +3,7 @@ import 'package:besafe/screens/recording.dart';
 import 'package:besafe/screens/emergency.dart';
 import 'package:besafe/screens/signin_screen.dart';
 import 'package:besafe/screens/sos.dart';
+import 'package:besafe/screens/voicerecord.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
