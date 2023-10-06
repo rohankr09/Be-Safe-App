@@ -2,8 +2,8 @@
 
 This is a group project that I along with my team started developing during the (G20 Global Summit) College Hackathon 🔥
 
-We haven't completed it yet because of our tight schedule as we all are in the final year of our degree.
-Although we've developed some quite features and design.
+We haven't completed it yet because of our tight schedule as we all are in the final year of our degree.                  
+Although we've developed some features and designs.
 
 
 If you have questions or any suggestions.
@@ -29,3 +29,8 @@ samples, guidance on mobile development, and a full API reference.
 
 
 Thank You...😊❤️‍🔥 
+
+**Team -**
+Gaurav Sardana (https://github.com/gauravsardana4245)
+Arun Kumar (https://github.com/Arun9650)
+Raj Kumar Gautam (https://github.com/rajkumargautam1) 
