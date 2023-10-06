@@ -2,7 +2,7 @@
 
 This is a group project that I along with my team started developing during the (G20 Global Summit) College Hackathon 🔥
 
-We haven't completed it yet because of our tight schedule as we all are in the final year of our degree.                  
+It's not as fully complete as we wanted it to be but we'll definitely get back to it soon.
 Although we've developed some features and designs.
 
 
